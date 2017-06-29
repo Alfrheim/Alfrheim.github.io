@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "TDD a repository with jdbcTemplate"
+title:  "Applying TDD in a repository with spring jdbcTemplate"
 banner_image: programming.png
 date:   2017-06-15 02:16:01 +0200
 category: programming 
-tags: [java, jdbcTemplate]
+tags: [java, jdbcTemplate, tdd]
 ---
 Recently I wanted to test the queries I was doing in the Database. The project was using spring boot and jdbcTemplate in a H2 database.
 
@@ -100,4 +100,4 @@ public class UserRepository {
 ...
 {% endhighlight %}
 
-You can see the whole code [here]: https://github.com/Alfrheim/IntegrationTestSpringJdbc .
+You can see the whole code <a href="https://github.com/Alfrheim/IntegrationTestSpringJdbc">here</a>. 
