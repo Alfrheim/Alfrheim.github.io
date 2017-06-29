@@ -15,7 +15,7 @@ description: "Blog for all kind of stuff"
 tagline: "It is well known that people are born with a bread under his arm. Marc had a keyboard."
 
 # The subpath of your site, e.g. /blog, for generating urls
-baseurl:""
+baseurl: ""
 
 
 sass:
