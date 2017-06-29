@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "TDD a repository with jdbcTemplate"
-date:   2017-06-15 02:16:01 +0200
 banner_image: programming.png
+date:   2017-06-15 02:16:01 +0200
 category: programming 
 tags: [java, jdbcTemplate]
 ---
@@ -11,8 +11,7 @@ Recently I wanted to test the queries I was doing in the Database. The project w
 Since it is an Integration Test I need to attack a real database or in this case an in memory DB.
 
 So, first things first. Create a maven project and add spring jdbc and h2 libraries. 
-
-{% highlight maven %}
+```maven pom
 <dependencies>
   ...
   <dependency>
@@ -28,7 +27,7 @@ So, first things first. Create a maven project and add spring jdbc and h2 librar
   </dependency>
   ...
 </dependencies>
-{% endhighlight %}
+```
 
 Then we create a script that will create the table in the database.
 
@@ -100,4 +99,4 @@ public class UserRepository {
 ...
 {% endhighlight %}
 
-You can see the whole code in https://github.com/Alfrheim/IntegrationTestSpringJdbc .
+You can see the whole code [here]([https://github.com/Alfrheim/IntegrationTestSpringJdbc).
