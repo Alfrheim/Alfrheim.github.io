@@ -12,7 +12,7 @@ Since it is an Integration Test I need to attack a real database or in this case
 
 So, first things first. Create a maven project and add spring jdbc and h2 libraries. 
 
-{% highlight maven POM %}
+{% highlight maven %}
 <dependencies>
   ...
   <dependency>
@@ -41,7 +41,7 @@ CREATE TABLE USERS (
 
 Next, we create a Test that checks that when we add an username we can retrieve it after. 
 
-''' java
+{% highlight java %}
 ...
 
 public class UserRepositoryShould {
@@ -71,7 +71,7 @@ public class UserRepositoryShould {
     }
 }
 
-'''
+{% endhighlight %}
 
 So, what we do in the setup?
 
@@ -81,7 +81,7 @@ No need to say that it will jump an exception saying that we already have the ex
 
 Now we only need to write the implementation of the methods and check that everything works fine.
 
-''' java
+{% highlight java %}
 ...
 public class UserRepository {
     private final JdbcTemplate jdbcTemplate;
@@ -98,6 +98,6 @@ public class UserRepository {
         jdbcTemplate.update("INSERT INTO USERS(NAME) VALUES(?)", userName);
     }
 ...
-'''
+{% endhighlight %}
 
 You can see the whole code in https://github.com/Alfrheim/IntegrationTestSpringJdbc .
