@@ -100,4 +100,4 @@ public class UserRepository {
 ...
 {% endhighlight %}
 
-You can see the whole code [here]([https://github.com/Alfrheim/IntegrationTestSpringJdbc]).
+You can see the whole code [here]: https://github.com/Alfrheim/IntegrationTestSpringJdbc .
