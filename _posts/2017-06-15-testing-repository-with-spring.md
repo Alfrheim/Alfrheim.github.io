@@ -10,7 +10,7 @@ Since it is an Integration Test I need to attack a real database or in this case
 
 So, first things first. Create a maven project and add spring jdbc and h2 libraries. 
 
-{% highlight maven %}
+''' Maven POM
 <dependencies>
   ...
   <dependency>
@@ -26,20 +26,20 @@ So, first things first. Create a maven project and add spring jdbc and h2 librar
   </dependency>
   ...
 </dependencies>
-{% endhighlight %}
+'''
 
 Then we create a script that will create the table in the database.
 
-{% highlight sql %}
+''' sql
 CREATE TABLE USERS (
   ID INT AUTO_INCREMENT PRIMARY KEY,
   NAME VARCHAR(255)
 );
-{% endhighlight %}
+'''
 
 Next, we create a Test that checks that when we add an username we can retrieve it after. 
 
-{% highlight java %}
+''' java 
 ...
 
 public class UserRepositoryShould {
@@ -69,7 +69,7 @@ public class UserRepositoryShould {
     }
 }
 
-{% endhighlight %}
+'''
 
 So, what we do in the setup?
 
