@@ -1,0 +1,32 @@
+---
+layout: default
+title: Post Archives
+---
+<div class="site-content">
+    <div class="inner">
+        <main class="site-main">
+            <article class="post">
+                <header class="entry-header">
+                    <div class="entry-header-wrap">  
+                        <h1 class="entry-title">Articles in: {{ page.category | upcase }}</h1>
+                    </div>
+                </header><!-- .entry-header -->
+                <div class="entry-content">
+                    <div class="archive-categories-list">
+
+						<ul>
+						{% for post in site.categories[page.category] %}
+						  <li>
+						    {{ post.date | date: "%B %d, %Y" }}: <a href="{{ post.url }}">{{ post.title }}</a>
+						  </li>
+						{% endfor %}
+						</ul>
+
+                    <p><a href="#top" class="archive-top-link" title="Back to Top">Return to top</a></p>
+
+                </div><!-- .entry-content -->
+            </article><!-- .post -->
+        </main><!-- .site-main -->
+        {% include sidebar.html %}
+    </div><!-- .inner -->
+</div><!-- .site-content -->

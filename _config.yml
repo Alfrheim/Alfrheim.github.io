@@ -1,12 +1,80 @@
-theme: jekyll-theme-midnight
-gems:
-  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
-  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
 
-# Exclude these files from your production _site
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE
-  - README.md
-- CNAME
+# Site title
+title: "Alfrheim Blog"
+
+# A description of your site for social meta tag, search engines, and feed.xml
+description: "Blog for all kind of stuff"
+
+# Tagline near the site title
+tagline: "It is well known that people are born with a bread under his arm. Marc had a keyboard."
+
+# The subpath of your site, e.g. /blog, for generating urls
+baseurl:""
+
+
+sass:
+  sass_dir: _sass
+
+# The base hostname & protocol of your site for where absolute urls are needed
+url: "https://alfrheim.github.io"
+
+# Site navigation - each item must have a title and a url.
+navigation:
+- text: Home
+  url: /
+- text: "programming"
+  url: /categories/programming/
+- text: Archives
+  url: /tags/    
+# - text: About
+#  url: /imprint.html
+#- text: Style Guides
+#  url: /style-guide/
+
+
+# The shortname for your Disqus site to enable comments.
+# disqus: "blog-alfrheim-com"
+
+# Author information - author info at the bottom of the post
+author_name: "Marc Badia Cendros"
+author_bio: "Marc is a Apprentice Craftsman in Codurance."
+author_url:  "http://alfrheim.github.io"
+author_location: "Barcelona"
+author_image: /images/authorimage.png
+
+# Sidebar Add banner
+#banner_url: "http://justgoodthemes.com"
+#banner_image: images/banner.jpg
+
+# Sidebar newsletter widget - add your form action url for MailChimp signup form here
+#mailchimp_url: "//justgoodthemes.us3.list-manage.com/subscribe/"
+
+# Social links in the site footer
+twitter_username: "@Alfrheim"
+#facebook_username: "username"
+#googleplus_username: "+username"
+github_username: "alfrheim"
+#codepen_username: "username"
+#dribbble_uername: "username"
+#medium_username: "@username"
+#instagram_username: "username"
+#pinterest_username: "username"
+#linkedin_username: "username"
+
+# http://jekyllrb.com/docs/pagination/
+paginate: 5
+paginate_path: '/blog/page:num/'
+gems: [jekyll-paginate]
+
+permalink: "/:categories/:year/:month/:title.html"
+markdown: kramdown
+kramdown:
+    auto_ids: false
+
+show_drafts: false    

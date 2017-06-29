@@ -1,8 +1,10 @@
 ---
 layout: post
-title:  "Testing "
+title:  "TDD a repository with jdbcTemplate"
 date:   2017-06-15 02:16:01 +0200
-categories: java spring
+banner_image: programming.png
+category: programming 
+tags: [java, jdbcTemplate]
 ---
 Recently I wanted to test the queries I was doing in the Database. The project was using spring boot and jdbcTemplate in a H2 database.
 
@@ -10,7 +12,7 @@ Since it is an Integration Test I need to attack a real database or in this case
 
 So, first things first. Create a maven project and add spring jdbc and h2 libraries. 
 
-''' Maven POM
+''' maven POM
 <dependencies>
   ...
   <dependency>
@@ -35,11 +37,12 @@ CREATE TABLE USERS (
   ID INT AUTO_INCREMENT PRIMARY KEY,
   NAME VARCHAR(255)
 );
+
 '''
 
 Next, we create a Test that checks that when we add an username we can retrieve it after. 
 
-''' java 
+''' java
 ...
 
 public class UserRepositoryShould {
@@ -79,7 +82,7 @@ No need to say that it will jump an exception saying that we already have the ex
 
 Now we only need to write the implementation of the methods and check that everything works fine.
 
-{% highlight java %}
+''' java
 ...
 public class UserRepository {
     private final JdbcTemplate jdbcTemplate;
@@ -96,6 +99,6 @@ public class UserRepository {
         jdbcTemplate.update("INSERT INTO USERS(NAME) VALUES(?)", userName);
     }
 ...
-{% endhighlight %}
+'''
 
 You can see the whole code in https://github.com/Alfrheim/IntegrationTestSpringJdbc .
