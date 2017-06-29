@@ -11,7 +11,8 @@ Recently I wanted to test the queries I was doing in the Database. The project w
 Since it is an Integration Test I need to attack a real database or in this case an in memory DB.
 
 So, first things first. Create a maven project and add spring jdbc and h2 libraries. 
-```maven pom
+
+{% highlight xml %}
 <dependencies>
   ...
   <dependency>
@@ -27,7 +28,7 @@ So, first things first. Create a maven project and add spring jdbc and h2 librar
   </dependency>
   ...
 </dependencies>
-```
+{% endhighlight %}
 
 Then we create a script that will create the table in the database.
 
@@ -99,4 +100,4 @@ public class UserRepository {
 ...
 {% endhighlight %}
 
-You can see the whole code [here]([https://github.com/Alfrheim/IntegrationTestSpringJdbc).
+You can see the whole code [here]([https://github.com/Alfrheim/IntegrationTestSpringJdbc]).
