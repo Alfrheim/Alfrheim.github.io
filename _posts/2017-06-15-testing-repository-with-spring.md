@@ -11,9 +11,9 @@ Recently I wanted to test the queries I was doing in the Database. The project w
 Since it is an Integration Test I need to attack a real database or in this case an in memory DB.
 
 So, first things first. 
-Create a maven project and add spring jdbc and h2 libraries in **pom.xml**. 
+Create a maven project and add spring jdbc and h2 libraries.
 
-
+> pom.xml 
 {% highlight xml %}
 <dependencies>
   ...
@@ -34,7 +34,7 @@ Create a maven project and add spring jdbc and h2 libraries in **pom.xml**.
 
 Then we write a script that will create the table in the database.
 
-**src/test/resources/db/sql/create-db.sql**.
+> src/test/resources/db/sql/create-db.sql
 {% highlight sql %}
 CREATE TABLE USERS (
   ID INT AUTO_INCREMENT PRIMARY KEY,
@@ -45,7 +45,7 @@ CREATE TABLE USERS (
 Now time to write the test. 
 We will check that we can retrieve an user when we add it.
 
-**src/test/java/io/alfrheim/UserRepositoryShould.java**
+> src/test/java/io/alfrheim/UserRepositoryShould.java
 {% highlight java %}
 ...
 
