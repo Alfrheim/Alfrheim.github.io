@@ -10,7 +10,9 @@ Recently I wanted to test the queries I was doing in the Database. The project w
 
 Since it is an Integration Test I need to attack a real database or in this case an in memory DB.
 
-So, first things first. Create a maven project and add spring jdbc and h2 libraries. 
+So, first things first. 
+Create a maven project and add spring jdbc and h2 libraries in `pom.xml`. 
+
 
 {% highlight xml %}
 <dependencies>
@@ -30,7 +32,7 @@ So, first things first. Create a maven project and add spring jdbc and h2 librar
 </dependencies>
 {% endhighlight %}
 
-Then we create a script that will create the table in the database.
+Then we write a script that will create the table in the database in `src/test/resources/db/sql/create-db.sql`.
 
 {% highlight sql %}
 CREATE TABLE USERS (
@@ -39,7 +41,8 @@ CREATE TABLE USERS (
 );
 {% endhighlight %}
 
-Next, we create a Test that checks that when we add an username we can retrieve it after. 
+Now time to write the test in `/src/test/java/io/alfrheim/UserRepositoryShould.java`.
+We will check that we can retrieve an user when we add it.
 
 {% highlight java %}
 ...
@@ -76,11 +79,15 @@ public class UserRepositoryShould {
 So, what we do in the setup?
 
 We specify the type of database we are going to use and execute the sql script we just created.
-And what about the *.generateUniqueName(true)*? you need that if you want to create a new database each time a test is run. By default the builder creates a bean named *test*. That means that if we had a second test, that one will run the *@Before* and instead creating a whole new database, will see that *test* exists and will reuse that one. 
+
+And what about the *.generateUniqueName(true)*?
+You need that if you want to create a new database each time a test is run.
+By default the builder creates a bean named *test*. That means that if we had a second test, that one will run the *@Before* and instead creating a whole new database, will see that *test* exists and will reuse that one. 
 No need to say that it will jump an exception saying that we already have the existing table and can't run the scpript. That can happen even if we try that in different Test files.
 
 Now we only need to write the implementation of the methods and check that everything works fine.
 
+`/src/main/java/io/alfrheim/UserRepository.java`
 {% highlight java %}
 ...
 public class UserRepository {
