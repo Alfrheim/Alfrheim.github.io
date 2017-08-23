@@ -4,7 +4,7 @@ title:  "Convert a Maven project to Gradle"
 banner_image: programming.png
 date:   2017-08-24 02:16:01 +0200
 category: programming 
-tags: [maven gradle java]
+tags: [maven, gradle, java]
 ---
 
 Recently I continued a small project I had long forgotten. It was build using maven. Was perfectly fine since I have seen a teammate working with gradle. He challenged me to do it in gradle and I thought... "Why not?".
